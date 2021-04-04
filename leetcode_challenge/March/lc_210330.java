@@ -19,7 +19,7 @@ public class lc_210330 {
             int output = 1;
             int[] dp = new int[envelopes.length];
 
-            Comparator<int[]> envelopesComparator = new Comparator<>() {
+            Comparator<int[]> envelopesComparator = new Comparator<int[]>() {
                 @Override
                 public int compare(int[] o1, int[] o2) {
                     if(o1[0] > o2[0])
