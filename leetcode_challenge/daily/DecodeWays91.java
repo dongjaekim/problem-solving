@@ -1,6 +1,6 @@
 package daily;
 
-public class daily_221001 {
+public class DecodeWays91 {
     public static int numDecodings(String s) {
         if(s.length() > 100 || s.startsWith("0"))
             return 0;
