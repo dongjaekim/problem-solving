@@ -1,4 +1,4 @@
-package daily;
+package problems.medium;
 
 public class DecodeWays91 {
     public static int numDecodings(String s) {
