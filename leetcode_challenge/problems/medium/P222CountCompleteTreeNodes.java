@@ -1,6 +1,6 @@
 package problems.medium;
 
-public class CountCompleteTreeNodes222 {
+public class P222CountCompleteTreeNodes {
     public static class TreeNode {
         int val;
         TreeNode left;

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class RemoveAllAdjacentDuplicates1047 {
+public class P1047RemoveAllAdjacentDuplicates {
     public static String removeDuplicates(String s) {
         List<Character> temp = new ArrayList<>();
 

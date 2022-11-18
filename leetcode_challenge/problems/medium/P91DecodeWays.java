@@ -1,6 +1,6 @@
 package problems.medium;
 
-public class DecodeWays91 {
+public class P91DecodeWays {
     public static int numDecodings(String s) {
         if(s.length() > 100 || s.startsWith("0"))
             return 0;

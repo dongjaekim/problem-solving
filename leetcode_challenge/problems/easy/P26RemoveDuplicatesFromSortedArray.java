@@ -1,12 +1,6 @@
 package problems.easy;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Set;
-import java.util.TreeSet;
-import java.util.stream.Collectors;
-
-public class RemoveDuplicatesFromSortedArray26 {
+public class P26RemoveDuplicatesFromSortedArray {
     public static int removeDuplicates(int[] nums) {
         if (nums.length == 1)
             return 1;

@@ -2,7 +2,7 @@ package problems.medium;
 
 import java.util.*;
 
-public class KdiffPairsInArray532 {
+public class P532KdiffPairsInArray {
     public static int findPairs(int[] nums, int k) {
         int output = 0;
 

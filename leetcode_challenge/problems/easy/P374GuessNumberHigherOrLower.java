@@ -1,6 +1,6 @@
 package problems.easy;
 
-public class GuessNumberHigherOrLower374 {
+public class P374GuessNumberHigherOrLower {
     static class GuessGame {
         private int pick;
         private int maxVal = Integer.MAX_VALUE;

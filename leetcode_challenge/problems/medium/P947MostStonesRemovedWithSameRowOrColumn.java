@@ -2,7 +2,7 @@ package problems.medium;
 
 import java.util.Arrays;
 
-public class MostStonesRemovedWithSameRowOrColumn947 {
+public class P947MostStonesRemovedWithSameRowOrColumn {
     public static int islandCount;
     public static int[] disjoint;
 
