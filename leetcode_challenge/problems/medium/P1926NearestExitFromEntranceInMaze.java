@@ -1,5 +1,7 @@
 package problems.medium;
 
+import util.ArrayUtils;
+
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringJoiner;
@@ -39,7 +41,7 @@ public class P1926NearestExitFromEntranceInMaze {
         int goUp = 10000;
         int goDown = 10000;
 
-        System.out.println("currentPosition = " + toString(currentPosition));
+        System.out.println("currentPosition = " + ArrayUtils.Array1DToString(currentPosition));
         System.out.println("step = " + step);
         if (currentPosition[0] == 0 || currentPosition[0] == maze.length - 1 || currentPosition[1] == 0 || currentPosition[1] == maze[0].length - 1) {
             if (entrance[0] != currentPosition[0] || entrance[1] != currentPosition[1]) {
@@ -59,14 +61,6 @@ public class P1926NearestExitFromEntranceInMaze {
             goLeft = dfs(maze, visited, entrance, new int[]{currentPosition[0], currentPosition[1] - 1}, step + 1);
 
         return Math.min(Math.min(Math.min(goLeft, goRight), goUp), goDown);
-    }
-
-    public static String toString(int[] ary) {
-        StringJoiner joiner = new StringJoiner(", ");
-        for (int i : ary) {
-            joiner.add(String.valueOf(i));
-        }
-        return "[" + joiner + "]";
     }
 
     public static void main(String[] args) {

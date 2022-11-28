@@ -2,7 +2,6 @@ package problems.medium;
 
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.StringJoiner;
 
 public class P279PerfectSquares {
     public static int numSquares(int n) {
@@ -35,14 +34,6 @@ public class P279PerfectSquares {
         }
 
         return cnt;
-    }
-
-    public static String toString(int[] ary) {
-        StringJoiner joiner = new StringJoiner(", ");
-        for (int i : ary) {
-            joiner.add(String.valueOf(i));
-        }
-        return "[" + joiner + "]";
     }
 
     public static void main(String[] args) {

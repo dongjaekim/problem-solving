@@ -1,5 +1,7 @@
 package problems.hard;
 
+import util.ArrayUtils;
+
 import java.util.*;
 
 public class P1235MaximumProfitInJobScheduling {
@@ -18,7 +20,7 @@ public class P1235MaximumProfitInJobScheduling {
                 return a1[1] - a2[1];
         });
 
-        System.out.println("job = " + toString(job));
+        System.out.println("job = " + ArrayUtils.Array2DToString(job));
         int[] dp = new int[job.length];
         dp[0] = job[0][2];
 
@@ -49,7 +51,7 @@ public class P1235MaximumProfitInJobScheduling {
                 return a1[1] - a2[1];
         });
 
-        System.out.println("job = " + toString(job));
+        System.out.println("job = " + ArrayUtils.Array2DToString(job));
 
         TreeMap<Integer, Integer> map = new TreeMap<>(){{
             put(0, 0);
@@ -76,16 +78,5 @@ public class P1235MaximumProfitInJobScheduling {
 
         int p4 = jobScheduling(new int[]{1, 2, 3, 3}, new int[]{3, 4, 5, 1000000000}, new int[]{50, 10, 40, 70});
         System.out.println("p4 = " + p4);
-    }
-
-    public static String toString(int[][] ary) {
-        StringBuilder sb = new StringBuilder();
-        StringJoiner sj = new StringJoiner(", ");
-        sb.append("[");
-        for (int i = 0; i < ary.length; i++)
-            sj.add("[" + ary[i][0] + ", " + ary[i][1] + ", " + ary[i][2] + "]");
-        sb.append(sj);
-        sb.append("]");
-        return sb.toString();
     }
 }
