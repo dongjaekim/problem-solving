@@ -19,9 +19,10 @@ public class P876MiddleOfTheLinkedList {
             temp.add(head);
             head = head.next;
         }
+        temp.add(head);
 
         int size = temp.size();
-        return size% 2 == 0 ? temp.get(size / 2) : temp.get((size / 2) + 1);
+        return temp.get(size / 2);
     }
 
     public static void main(String[] args) {
