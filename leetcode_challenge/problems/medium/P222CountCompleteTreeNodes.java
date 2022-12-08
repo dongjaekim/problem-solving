@@ -1,19 +1,8 @@
 package problems.medium;
 
-public class P222CountCompleteTreeNodes {
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode() {}
-        TreeNode(int val) { this.val = val; }
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
+import util.TreeNodeUtils.TreeNode;
 
+public class P222CountCompleteTreeNodes {
     public static int countNodes(TreeNode root) {
         int output = 0;
 
