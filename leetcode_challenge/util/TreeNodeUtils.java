@@ -29,10 +29,13 @@ public class TreeNodeUtils {
 
         while (!queue.isEmpty()) {
             TreeNode node = queue.poll();
-            joiner.add(String.valueOf(node.val));
-
-            if (node == null)
+            if (node == null) {
+                joiner.add("null");
                 continue;
+            } else {
+                joiner.add(String.valueOf(node.val));
+            }
+
             queue.add(node.left);
             queue.add(node.right);
         }
