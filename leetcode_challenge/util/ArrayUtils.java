@@ -16,7 +16,7 @@ public class ArrayUtils {
         StringJoiner sj = new StringJoiner(", ");
         sb.append("[");
         for (int i = 0; i < ary.length; i++)
-            sj.add("[" + ary[i][0] + ", " + ary[i][1] + ", " + ary[i][2] + "]");
+            sj.add(Array1DToString(ary[i]));
         sb.append(sj);
         sb.append("]");
         return sb.toString();
