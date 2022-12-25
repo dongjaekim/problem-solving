@@ -1,38 +1,46 @@
 package problems.medium;
 
+import java.util.Arrays;
+
 public class P790DominoAndTrominoTiling {
-    public static int numTilings(int n) {
-        int output = 1;
 
-        int divider2 = n / 2;
-        int divider3 = n / 3;
+    public static int numTilings2(int n) {
+        final int MOD = (int) Math.pow(10, 9) + 7;
 
-        for (int i = 1; i <= divider2; i++)
-            output += combination(n - 2 * i + i, i);
+        if (n < 3)
+            return n;
 
-        System.out.println("output = " + output);
-/*
-    1
-    1 + 1
-    1 + 2
-    1 + 3 + 1
-    1 + 4 + 3
-    1 + 5 + 6 + 1
-    1 + 6 + 10 + 4
-    1 + 7 + 15 + 10 + 1
-        1 2 3 5 8 13 21 34
-*/
+        int[] dp = new int[n + 1];
+        dp[0] = 1;
+        dp[1] = 1;
+        dp[2] = 2;
 
-        return output % ((int) Math.pow(10, 9) + 7);
+        for (int i = 3; i <= n; i++) {
+            dp[i] = (dp[i - 1] * 2 + dp[i - 3]) % MOD;
+        }
+        return dp[n];
     }
 
-    public static int combination(int x, int y) {
-        int output = 1;
-        for (int i = 0; i < y; i++)
-            output *= (x - i);
-        for (int j = 1; j <= y; j++)
-            output /= j;
-        return output;
+    public static int numTilings(int n) {
+        // dp
+        long[][] dp = new long[n + 1][3];
+        final int MOD = (int) Math.pow(10, 9) + 7;
+
+        if (n < 3)
+            return n;
+
+        dp[0][0] = 1;
+        dp[1][0] = 1;
+        dp[1][1] = 1;
+        dp[1][2] = 1;
+
+        for (int i = 2; i <= n; i++) {
+            dp[i][0] = (dp[i - 1][0] + dp[i - 2][0] + dp[i - 2][1] + dp[i - 2][2]) % MOD;
+            dp[i][1] = (dp[i - 1][0] + dp[i - 1][2]) % MOD;
+            dp[i][2] = (dp[i - 1][0] + dp[i - 1][1]) % MOD;
+        }
+
+        return (int) dp[n][0];
     }
 
     public static void main(String[] args) {
@@ -42,7 +50,10 @@ public class P790DominoAndTrominoTiling {
         int p2 = numTilings(1);
         System.out.println("p2 = " + p2);
 
-        int p3 = numTilings(5);
+        int p3 = numTilings(4);
         System.out.println("p3 = " + p3);
+
+        int p4 = numTilings(30);
+        System.out.println("p4 = " + p4);
     }
 }
