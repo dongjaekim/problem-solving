@@ -12,7 +12,8 @@ public class P1061LexicographicallySmallestEquivalentString {
     
     public static String smallestEquivalentString(String s1, String s2, String baseStr) {
         String output = "";
-        Arrays.fill(equivalentChar, -1);
+        for (int i = 0; i < 26; i++)
+            equivalentChar[i] = i;
 
         for (int i = 0; i < s1.length(); i++) {
             char c1 = s1.charAt(i);
@@ -23,49 +24,37 @@ public class P1061LexicographicallySmallestEquivalentString {
 
         for (int i = 0; i < baseStr.length(); i++) {
             char c = baseStr.charAt(i);
-            if (equivalentChar[c - 'a'] == -1)
-                output += c;
-            else
-                output += (char) ('a' + equivalentChar[equivalentChar[c - 'a']]);
+            output += (char) ('a' + find(c - 'a'));
         }
 
         return output;
     }
 
-    public static int find(int idx) {
-        if (equivalentChar[idx] == -1)
-            equivalentChar[idx] = idx;
-
-        return equivalentChar[idx];
+    public static int find(int x) {
+        int parent = equivalentChar[x];
+        if (parent != x) {
+            parent = find(parent);
+            equivalentChar[x] = parent;
+        }
+        return parent;
     }
 
     public static void union(int x, int y) {
         int findX = find(x);
         int findY = find(y);
 
-        if (findX > findY) {
-            int val = equivalentChar[findX];
-            for (int i = 0; i < equivalentChar.length; i++) {
-                if (equivalentChar[i] == val)
-                    equivalentChar[i] = findY;
-            }
+        if (findX > findY)
             equivalentChar[findX] = findY;
-        } else if (findX < findY) {
-            int val = equivalentChar[findY];
-            for (int i = 0; i < equivalentChar.length; i++) {
-                if (equivalentChar[i] == val)
-                    equivalentChar[i] = findX;
-            }
+        else if (findX < findY)
             equivalentChar[findY] = findX;
-        }
     }
 
     public static void main(String[] args) {
-        String p1 = smallestEquivalentString("parker", "morris", "parser");
-        System.out.println("p1 = " + p1);
+//        String p1 = smallestEquivalentString("parker", "morris", "parser");
+//        System.out.println("p1 = " + p1);
 
-        String p2 = smallestEquivalentString("hello", "world", "hold");
-        System.out.println("p2 = " + p2);
+//        String p2 = smallestEquivalentString("hello", "world", "hold");
+//        System.out.println("p2 = " + p2);
 
         String p3 = smallestEquivalentString("leetcode", "programs", "sourcecode");
         System.out.println("p3 = " + p3);
