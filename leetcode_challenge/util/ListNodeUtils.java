@@ -25,4 +25,19 @@ public class ListNodeUtils {
 
         return "[" + joiner + "]";
     }
+    
+    public static ListNode makeListNode(int[] heads) {
+        ListNode root = new ListNode(heads[0]);
+
+        if (heads.length > 1) {
+            ListNode prev = root;
+            for (int i = 1; i < heads.length; i++) {
+                ListNode listNode = new ListNode(heads[i]);
+                prev.next = listNode;
+                prev = listNode;
+            }
+        }
+
+        return root;
+    }
 }
