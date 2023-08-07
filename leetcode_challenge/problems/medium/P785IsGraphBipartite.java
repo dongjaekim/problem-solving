@@ -4,7 +4,7 @@ import java.util.*;
 
 public class P785IsGraphBipartite {
     
-    public boolean isBipartite(int[][] graph) {
+    public static boolean isBipartite(int[][] graph) {
         Map<Integer, Integer> color = new HashMap<>();
 
         for (int i = 0; i < graph.length; i++) {
@@ -19,7 +19,7 @@ public class P785IsGraphBipartite {
         return true;
     }
 
-    public boolean bfs(int[][] graph, Map<Integer, Integer> color, int node) {
+    public static boolean bfs(int[][] graph, Map<Integer, Integer> color, int node) {
         Queue<Integer> nodesToVisit = new LinkedList<>();
         nodesToVisit.add(node);
         color.put(node, 1);

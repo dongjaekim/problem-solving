@@ -1,7 +1,9 @@
 package problems.medium;
 
+import util.ArrayUtils;
+
 public class P1035UncrossedLines {
-    public int maxUncrossedLines(int[] nums1, int[] nums2) {
+    public static int maxUncrossedLines(int[] nums1, int[] nums2) {
         int m = nums1.length;
         int n = nums2.length;
         int[][] dp = new int[m + 1][n + 1];

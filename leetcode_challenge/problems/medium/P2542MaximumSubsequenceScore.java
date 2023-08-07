@@ -1,7 +1,10 @@
 package problems.medium;
 
+import java.util.Arrays;
+import java.util.PriorityQueue;
+
 public class P2542MaximumSubsequenceScore {
-    public long maxScore(int[] nums1, int[] nums2, int k) {
+    public static long maxScore(int[] nums1, int[] nums2, int k) {
         int n = nums1.length;
         int[][] pairs = new int[n][2];
 

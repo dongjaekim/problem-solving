@@ -1,7 +1,9 @@
 package problems.easy;
 
+import java.util.PriorityQueue;
+
 public class P703KthLargestElementInAStream {
-    class KthLargest {
+    static class KthLargest {
 
         private PriorityQueue<Integer> priorityQueue;
         private int idx;

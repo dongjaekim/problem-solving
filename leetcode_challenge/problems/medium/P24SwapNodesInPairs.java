@@ -2,11 +2,14 @@ package problems.medium;
 
 import util.ListNodeUtils;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static util.ListNodeUtils.*;
 
 public class P24SwapNodesInPairs {
 
-    public ListNode swapPairs(ListNode head) {
+    public static ListNode swapPairs(ListNode head) {
         List<ListNode> nodes = new ArrayList<>();
 
         if(head == null)
@@ -40,8 +43,8 @@ public class P24SwapNodesInPairs {
     }
 
     public static void main(String[] args) {
-        ListNode e1_input = ListNode.makeListNode(new int[]{1, 2, 3, 4}); // 2, 1, 4, 3
+        ListNode e1_input = ListNodeUtils.makeListNode(new int[]{1, 2, 3, 4}); // 2, 1, 4, 3
         ListNode e1 = swapPairs(e1_input);
-        System.out.println("e1: " + ListNode.ListNodeToString(e1));
+        System.out.println("e1: " + ListNodeUtils.toString(e1));
     }
 }

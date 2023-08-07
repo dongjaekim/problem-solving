@@ -1,7 +1,9 @@
 package problems.medium;
 
+import util.ArrayUtils;
+
 public class P59SpiralMatrix2 {
-    public int[][] generateMatrix(int n) {
+    public static int[][] generateMatrix(int n) {
         int i = 0;
         int j = 0;
         int[][] visited = new int[n][n];

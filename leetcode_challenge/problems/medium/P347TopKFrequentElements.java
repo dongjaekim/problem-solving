@@ -1,10 +1,15 @@
 package problems.medium;
 
 import util.ArrayUtils;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.PriorityQueue;
+
 import static util.ArrayUtils.*;
 
 public class P347TopKFrequentElements {
-    public int[] topKFrequent(int[] nums, int k) {
+    public static int[] topKFrequent(int[] nums, int k) {
         Map<Integer, Integer> frequentNumber = new HashMap<>();
         for (int i = 0; i < nums.length; i++)
             frequentNumber.put(nums[i], frequentNumber.getOrDefault(nums[i], 0) + 1);
