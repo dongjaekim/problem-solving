@@ -15,22 +15,22 @@ public class P731MyCalendar2 {
             schedule.put(end, schedule.getOrDefault(end, 0) - 1);
             
             int count = 0;
-            System.out.println("map before loop = " + map);
-            for(int i : map.values()){
+            System.out.println("map before loop = " + schedule);
+            for(int i : schedule.values()){
                 count += i;
                 if(count > 2) {
-                    map.put(start, map.get(start) - 1);
-                    if(map.get(start) == 0) 
-                      map.remove(start);
-                    
-                    map.put(end , map.get(end) + 1);
-                    if(map.get(end) == 0) 
-                      map.remove(end);
+                    schedule.put(start, schedule.get(start) - 1);
+                    if(schedule.get(start) == 0)
+                        schedule.remove(start);
+
+                    schedule.put(end , schedule.get(end) + 1);
+                    if(schedule.get(end) == 0)
+                        schedule.remove(end);
                     
                   return false;
                 }
             }
-            System.out.println("map after loop = " + map);
+            System.out.println("map after loop = " + schedule);
             return true;
         }
     }
