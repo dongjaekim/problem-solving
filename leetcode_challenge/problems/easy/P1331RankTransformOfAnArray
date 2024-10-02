@@ -1,0 +1,35 @@
+package problems.easy;
+
+public class P1331RankTransformOfAnArray {
+    public static void main(String[] args) {
+        int[] e1 = arrayRankTransform(new int[] { 40, 10, 20, 30 });
+        int[] e2 = arrayRankTransform(new int[] { 100, 100, 100 });
+        int[] e3 = arrayRankTransform(new int[] { 37, 12, 28, 9, 100, 56, 80, 5, 12 });
+
+        print(e1);
+        print(e2);
+        print(e3);
+    }
+
+    public static int[] arrayRankTransform(int[] arr) {
+        int[] sortedArr = Arrays.stream(arr).distinct().sorted().toArray();
+
+        int rank = 1;
+        HashMap<Integer, Integer> rankMap = new HashMap<>();
+        for (int i : sortedArr) {
+            rankMap.put(i, rank++);
+        }
+
+        int[] rankArr = new int[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            rankArr[i] = rankMap.get(arr[i]);
+        }
+        return rankArr;
+    }
+
+    public static void print(int[] arr) {
+        System.out.print("[");
+        String collect = Arrays.stream(arr).mapToObj(String::valueOf).collect(Collectors.joining(", "));
+        System.out.println(collect + "]");
+    }
+}
