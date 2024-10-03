@@ -1,7 +1,9 @@
 package problems.medium;
 
+import util.ArrayUtils;
+
 public class P2140SolvingQuestionsWithBrainpower {
-    public long mostPoints(int[][] questions) {
+    public static long mostPoints(int[][] questions) {
         int n = questions.length;
         long[] dp = new long[n + 1];
 
@@ -16,7 +18,7 @@ public class P2140SolvingQuestionsWithBrainpower {
         return dp[0];
     }
 
-    public long mostPoints2(int[][] questions) {
+    public static long mostPoints2(int[][] questions) {
         int n = questions.length;
         int[] dp = new int[n + 1];
 

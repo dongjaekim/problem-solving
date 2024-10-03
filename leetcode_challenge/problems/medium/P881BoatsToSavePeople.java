@@ -1,5 +1,7 @@
 package problems.medium;
 
+import java.util.Arrays;
+
 public class P881BoatsToSavePeople {
   public static void main(String[] args) {
         int e1 = numRescueBoats(new int[] { 1, 2 }, 3); //1
