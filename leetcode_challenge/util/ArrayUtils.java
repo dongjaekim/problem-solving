@@ -1,8 +1,17 @@
 package util;
 
+import java.util.Arrays;
 import java.util.StringJoiner;
+import java.util.stream.Collectors;
 
 public class ArrayUtils {
+
+    public static void print(Object[] ary) {
+        System.out.print("[");
+        System.out.print(Arrays.stream(ary).map(String::valueOf).collect(Collectors.joining(",")));
+        System.out.println("]");
+    }
+
     public static String Array1DToString(int[] ary) {
         StringJoiner joiner = new StringJoiner(", ");
         for (int i : ary) {
