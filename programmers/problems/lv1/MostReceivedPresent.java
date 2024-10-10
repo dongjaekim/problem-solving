@@ -1,3 +1,5 @@
+package problems.lv1;
+
 import java.util.HashMap;
 
 class MostReceivedPresent {
