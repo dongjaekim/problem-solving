@@ -1,17 +1,24 @@
 package problems.lv0;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
-class Solution {
+class MakeArray2 {
     public static void main(String[] args) {
-        int[] e1 = solution5(5, 555);
-        int[] e2 = solution5(10, 20);
+        int[] e1 = solution(5, 555);
+        int[] e2 = solution(10, 20);
 
         print(e1); //[5, 50, 55, 500, 505, 550, 555]
         print(e2); //[-1]
     }
+
+    public static void print(int[] ary) {
+        System.out.print("[");
+        System.out.print(Arrays.stream(ary).mapToObj(String::valueOf).collect(Collectors.joining(",")));
+        System.out.println("]");
+    }
   
-    public int[] solution(int l, int r) {
+    public static int[] solution(int l, int r) {
         List<Integer> num = new ArrayList<>();
 
         int cnt = 1;
