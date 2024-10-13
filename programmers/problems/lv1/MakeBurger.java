@@ -1,3 +1,5 @@
+package problems.lv1;
+
 import java.util.*;
 
 class MakeBurger {
@@ -9,7 +11,7 @@ class MakeBurger {
         System.out.println("e2 = " + e2); //0
     }
 
-    public static int solution7(int[] ingredient) {
+    public static int solution(int[] ingredient) {
         Stack<Integer> stack = new Stack<>();
 
         int answer = 0;

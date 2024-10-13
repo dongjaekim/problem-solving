@@ -1,5 +1,7 @@
 package problems.easy;
 
+import java.util.Stack;
+
 public class P2696MinimumStringLengthAfterRemovingSubstrings {
     public static void main(String[] args) {
         int e1 = minLength("ABFCACDB");

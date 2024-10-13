@@ -1,6 +1,7 @@
 package problems.lv2;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 class DonutAndBarGraph {
     public static void main(String[] args) {

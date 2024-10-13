@@ -1,4 +1,7 @@
-import problems.lv0;
+package problems.lv0;
+
+import java.util.Arrays;
+import java.util.stream.Collectors;
 
 class IntegerToSpiralArray {
     public static void main(String[] args) {
@@ -19,7 +22,7 @@ class IntegerToSpiralArray {
         System.out.println(collect + "]");
     }
   
-    public int[][] solution(int n) {
+    public static int[][] solution(int n) {
         int[][] answer = new int[n][n];
         int[][] direction = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
         
