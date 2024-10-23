@@ -1,6 +1,8 @@
 package util;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.StringJoiner;
 import java.util.stream.Collectors;
 
@@ -10,6 +12,15 @@ public class ArrayUtils {
         System.out.print("[");
         System.out.print(Arrays.stream(ary).map(String::valueOf).collect(Collectors.joining(",")));
         System.out.println("]");
+    }
+
+    public static void print(int[] ary) {
+        System.out.print("[");
+        System.out.print(Arrays.stream(ary).mapToObj(String::valueOf).collect(Collectors.joining(",")));
+        System.out.println("]");
+
+        List<Integer> i = new ArrayList<>();
+
     }
 
     public static String Array1DToString(int[] ary) {
