@@ -3,7 +3,6 @@ package problems.lv3;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import util.ArrayUtils;
 
 public class ChooseDice {
@@ -20,40 +19,6 @@ public class ChooseDice {
         ArrayUtils.print(e1);
         long end = System.currentTimeMillis();
         System.out.println("execution time = " + (end - start) + "ms");
-
-//        long start2 = System.currentTimeMillis();
-//        int[] e2 = solution(new int[][] { { 1, 2, 3, 4, 5, 6 }, { 2, 2, 4, 4, 6, 6 } });
-//        ArrayUtils.print(e2);
-//        long end2 = System.currentTimeMillis();
-//        System.out.println("execution time = " + (end2 - start2) + "ms");
-/*
-테스트 1 〉	통과 (59.49ms, 156MB)
-테스트 2 〉	통과 (9.03ms, 75.3MB)
-테스트 3 〉	통과 (9.71ms, 85.6MB)
-테스트 4 〉	통과 (10.06ms, 85.8MB)
-테스트 5 〉	통과 (13.95ms, 84.5MB)
-테스트 6 〉	통과 (15.40ms, 76.4MB)
-테스트 7 〉	통과 (69.69ms, 161MB)
-테스트 8 〉	통과 (62.28ms, 150MB)
-테스트 9 〉	통과 (61.64ms, 147MB)
-테스트 10 〉	통과 (62.94ms, 195MB)
-테스트 11 〉	통과 (78.15ms, 164MB)
-테스트 12 〉	통과 (117.02ms, 132MB)
-테스트 13 〉	통과 (1698.00ms, 677MB)
-테스트 14 〉	통과 (1930.88ms, 644MB)
-테스트 15 〉	통과 (1774.05ms, 616MB)
-테스트 16 〉	통과 (1746.83ms, 655MB)
-테스트 17 〉	통과 (1848.30ms, 664MB)
-테스트 18 〉	통과 (2063.51ms, 679MB)
-테스트 19 〉	실패 (시간 초과)
-테스트 20 〉	실패 (시간 초과)
-테스트 21 〉	실행 중단
-테스트 22 〉	실행 중단
-테스트 23 〉	실행 중단
-테스트 24 〉	실행 중단
-테스트 25 〉	실행 중단
-테스트 26 〉	실행 중단
- */
     }
 
     public static int[] solution(int[][] dice) {
